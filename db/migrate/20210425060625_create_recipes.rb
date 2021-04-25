@@ -5,7 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text :material
       t.text :make
       t.text :point
-      t.string :image
+      t.string :image_id
 
       t.timestamps
     end

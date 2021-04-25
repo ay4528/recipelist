@@ -5,11 +5,11 @@ one:
   material: MyText
   make: MyText
   point: MyText
-  image: MyString
+  image_id: MyString
 
 two:
   title: MyString
   material: MyText
   make: MyText
   point: MyText
-  image: MyString
+  image_id: MyString

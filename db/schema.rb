@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_080637) do
+ActiveRecord::Schema.define(version: 2021_04_25_111110) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.text "material"
     t.text "make"
     t.text "point"
-    t.string "image"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_080637) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "profile"
-    t.string "profile_image"
+    t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

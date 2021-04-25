@@ -1,2 +1,34 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section>
+  <% if user_signed_in? %>
+    <div class="content has-text-centered">
+      <p class="is-size-1" style="font-family: mv boli;">Recipelist</p>
+    </div>
+    <br>
+    <div class="columns is-centered">
+      <div class="column">
+        <figure>
+          <div class="home-image"></div>
+        </figure>
+      </div>
+    </div>
+  <% else %>
+    <div class="content has-text-centered">
+      <p class="is-size-1 my-5" style="font-family: mv boli;">Recipelist</p>
+    </div>  
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= link_to 'ログイン', new_user_session_path, class: "button is-warning is-fullwidth" %>
+        <br>
+        <%= link_to '新規登録', new_user_registration_path, class: "button is-warning is-fullwidth" %>
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered">
+      <div class="column">
+        <figure>
+          <div class="home-image"></div>
+        </figure>
+      </div>
+    </div>
+  <% end %>
+</section>

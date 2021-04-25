@@ -15,3 +15,14 @@
  */
 
 @import "bulma";
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.home-image {
+  height: 1271px;
+  background-image: url(recipelist.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

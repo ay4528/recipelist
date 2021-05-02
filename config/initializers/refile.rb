@@ -6,3 +6,6 @@ aws = {
   region: "ap-northeast-1",
   bucket: "photo-rails",
 }
+
+Refile.cache = Refile::S3.new(prefix: 'cache', **aws)
+Refile.store = Refile::S3.new(prefix: 'store', **aws)

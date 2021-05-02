@@ -28,19 +28,19 @@
                   <th>材料</th>
                 </tr>
                 <tr>
-                  <td><%= @recipe.material %></td>
+                  <td><%= simple_format(@recipe.material) %></td>
                 </tr>
                 <tr>
                   <th>作り方</th>
                 </tr>
                 <tr>
-                  <td><%= @recipe.make %></td>
+                  <td><%= simple_format(@recipe.make) %></td>
                 </tr>
                 <tr>
                   <th>ポイント</th>
                 </tr>
                 <tr>
-                  <td><%= @recipe.point %></td>
+                  <td><%= simple_format(@recipe.point) %></td>
                 </tr>
               </table>
               <% if user_signed_in? && @recipe.user.id == current_user.id %>

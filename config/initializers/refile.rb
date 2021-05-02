@@ -1,10 +1,12 @@
 require "refile/s3"
 
-aws = {
-  access_key_id: "AWS_ACCESS_KEY_ID",
-  secret_access_key: "AWS_SECRET_ACCESS_KEY",
-  region: "ap-northeast-1",
-  bucket: "photo-rails",
-}
+if Rails.env.production?
+  aws = {
+    access_key_id: ENV["AKIAVRZ4TY5AYPKKM4OV"],
+    secret_access_key: ENV["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"],
+    region: "ap-northeast-1",
+    bucket: "photo-rails",
+  }
+end
 Refile.cache = Refile::S3.new(prefix: "cache", **aws)
 Refile.store = Refile::S3.new(prefix: "store", **aws)

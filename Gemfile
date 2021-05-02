@@ -73,6 +73,6 @@ gem 'rubocop-rails', require: false
 
 gem 'kaminari'
 
-group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
-end
+gem 'pg', group: :production
+
+gem 'sqlite3', group: [:development, :test]

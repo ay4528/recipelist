@@ -72,3 +72,7 @@ gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 
 gem 'kaminari'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# RecipesController
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all.order(id: "DESC")
+    @recipes = Recipe.all.order(id: 'DESC')
   end
 
   def show
@@ -13,9 +16,9 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    
+
     if @recipe.save
-      redirect_to recipes_path, notice: "レシピを作成しました。"
+      redirect_to recipes_path, notice: 'レシピを作成しました。'
     else
       render :new
     end
@@ -27,9 +30,9 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    
+
     if @recipe.update(recipe_params)
-      redirect_to recipe_path(@recipe), notice: "レシピを更新しました。"
+      redirect_to recipe_path(@recipe), notice: 'レシピを更新しました。'
     else
       render :edit
     end
@@ -38,13 +41,12 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to user_path(@recipe.user), notice: "レシピを削除しました。"
+    redirect_to user_path(@recipe.user), notice: 'レシピを削除しました。'
   end
-  
+
   private
-  
+
   def recipe_params
     params.require(:recipe).permit(:title, :material, :make, :point, :image)
   end
-  
 end

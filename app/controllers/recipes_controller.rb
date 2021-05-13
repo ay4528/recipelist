@@ -3,7 +3,7 @@
 # RecipesController
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all.order(id: 'DESC').page(params[:page]).per(9)
+    @recipes = Recipe.all.order(id: :desc).page(params[:page]).per(9)
   end
 
   def show
